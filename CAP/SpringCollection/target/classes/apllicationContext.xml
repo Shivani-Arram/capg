@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+     <bean id = "coll1" class = "com.test.Person">
+    
+    	<property name="perid" value = "101"></property>
+    	<property name="pers" value = "John"></property>
+    	
+    
+    </bean>
+    <bean id = "coll2" class = "com.test.Person">
+    
+    	<property name="perid" value = "102"></property>
+    	<property name="pers" value = "Kate"></property>
+    	
+    
+    </bean>
+    <bean id = "coll3" class = "com.test.Person">
+    
+    	<property name="perid" value = "103"></property>
+    	<property name="pers" value = "James"></property>
+    	
+    
+    </bean>
+    <bean id = "coll4" class = "com.test.Person">
+    
+    	<property name="perid" value = "104"></property>
+    	<property name="pers" value = "Anna"></property>
+    	
+    
+    </bean>
+    
+     <bean id = "coll" class = "com.test.CollectionEx" autowire="default">
+    
+    	<property name="id" value = "1"></property>
+    	<property name="dept" value = "Associate Engineer"></property>
+    	<property name="per">
+    		<list>
+    			<ref  bean = "coll1"></ref>
+    			<ref bean = "coll2"/> 
+
+				
+    		</list>
+    		
+    	</property>
+    
+    </bean>
+    <bean id = "colle" class = "com.test.CollectionEx" autowire="default">
+    
+    	<property name="id" value = "2"></property>
+    	<property name="dept" value = "Software Engineer"></property>
+    	<property name="per">
+    		<list>
+    			<ref  bean = "coll3"></ref>
+    			<ref bean = "coll4"/> 
+
+				
+    		</list>
+    		
+    	</property>
+    
+    </bean>
+    
+</beans>
